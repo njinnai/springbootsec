@@ -7,11 +7,20 @@
  */
 
 plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+
     // Apply the java plugin to add support for Java
     id 'java'
 
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
+	id 'war'
+}
+
+war {
+	enabled = true
+	archiveName = applicationName
 }
 
 repositories {
@@ -21,18 +30,19 @@ repositories {
 }
 
 dependencies {
-
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:29.0-jre'
-
-    // Use JUnit Jupiter API for testing.
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-
-    // Use JUnit Jupiter Engine for testing.
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
-
     compile 'org.springframework.security:spring-security-web:5.3.4.RELEASE'
     compile 'org.springframework.security:spring-security-config:5.3.4.RELEASE'
+
+    compile 'org.springframework.boot:spring-boot-starter'
+
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    runtime('org.springframework.boot:spring-boot-devtools')
+    runtime('mysql:mysql-connector-java')
+    compileOnly('org.springframework.boot:spring-boot-starter-tomcat')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
 }
 
 application {
