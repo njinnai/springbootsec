@@ -1,20 +1,5 @@
-
 server:
   port: 8080
-
----
-spring:
-  datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    password: pass
-    url: jdbc:mysql://localhost:3306/test_db?allowPublicKeyRetrieval=true&useSSL=FALSE&characterEncoding=UTF-8&serverTimezone=JST
-    username: docker
-  jpa:
-    database: MYSQL
-    hibernate:
-      ddl-auto: update
-
----
 spring:
   profiles: docker-compose
   datasource:
