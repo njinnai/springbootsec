@@ -10,7 +10,7 @@ spring:
   jpa:
     database: test_db
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
 security:
     basic:
         enabled: false
