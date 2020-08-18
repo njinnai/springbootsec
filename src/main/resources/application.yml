@@ -3,10 +3,10 @@ server:
 spring:
   profiles: docker-compose
   datasource:
-    url: jdbc:mysql://db:3306/db
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://db:3306/test_db
     username: docker
     password: pass
-    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
