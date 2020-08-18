@@ -8,6 +8,7 @@ spring:
     username: docker
     password: pass
   jpa:
+    database: test_db
     hibernate:
       ddl-auto: update
 security:
